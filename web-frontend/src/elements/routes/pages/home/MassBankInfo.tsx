@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react';
 import { Content } from 'antd/es/layout/layout';
-import massbankLogo from '../../../../assets/logo.svg';
+import massbankLogo from '../../../../assets/logo.png';
 import { usePropertiesContext } from '../../../../context/properties/properties';
 import FreeText from '../../../basic/FreeText';
 

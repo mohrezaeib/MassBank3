@@ -6,7 +6,7 @@ import { Header as HeaderAntD } from 'antd/es/layout/layout';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { usePropertiesContext } from '../../context/properties/properties';
 import { CSSProperties, useMemo } from 'react';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import AccessionSearchInputField from '../common/AccessionSearchInputField';
 
 const backgroundColor: CSSProperties['backgroundColor'] = 'rgb(223, 223, 223)';
