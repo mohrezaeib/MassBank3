@@ -109,7 +109,7 @@ services:
       - "${MB3_FRONTEND_PORT}:3000"
     # volumes:
     #   - "${HTML_LOCAL_DIR}:/app/analytics-html"
-    mem_limit: 2g
+    mem_limit: 4g
     memswap_limit: 16g
   mb3tool:
     build:
