@@ -107,10 +107,14 @@ services:
     restart: always
     ports:
       - "${MB3_FRONTEND_PORT}:3000"
-    # volumes:
-    #   - "${HTML_LOCAL_DIR}:/app/analytics-html"
-    mem_limit: 4g
-    memswap_limit: 16g
+    deploy:
+      resources:
+        limits:
+          memory: 1512M
+        reservations:
+          memory: 128M
+    memswap_limit: 6G
+
   mb3tool:
     build:
       context: ..
