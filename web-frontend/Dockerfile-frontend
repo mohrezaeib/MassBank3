@@ -1,5 +1,7 @@
 FROM node:23-alpine AS build
 WORKDIR /app
+ENV NODE_OPTIONS="--max-old-space-size=2048"
+
 # Installing dependencies first can save time on rebuilds
 # We do need the full (dev) dependencies here
 COPY package.json ./
