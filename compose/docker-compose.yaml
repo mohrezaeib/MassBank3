@@ -110,7 +110,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 1512M
+          memory: 4G
         reservations:
           memory: 128M
     memswap_limit: 6G
