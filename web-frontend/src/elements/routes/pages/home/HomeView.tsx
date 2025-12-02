@@ -1,6 +1,6 @@
 import Layout, { Content } from 'antd/es/layout/layout';
 import { JSX, memo } from 'react';
-import News from '../../../common/News';
+// import News from '../../../common/News';
 import SectionDivider from '../../../basic/SectionDivider';
 import AcknowledgementNFDI4Chem from '../../../common/AcknowledgementNFDI4Chem';
 import Segmented from '../../../basic/Segmented';
@@ -12,7 +12,7 @@ import FreeText from '../../../basic/FreeText';
 
 function HomeView() {
   const {
-    homepageNewsSectionText,
+    // homepageNewsSectionText,
     homepageFundingSectionText,
     homepageAdditionalSectionName,
     homepageAdditionalSectionText,
@@ -22,7 +22,7 @@ function HomeView() {
   const elementLabels: string[] = [];
 
   elements.push(<MassBankInfo />);
-  elementLabels.push('MassBank');
+  elementLabels.push('MycoMSBase');
   elements.push(
     <Content>
       <SectionDivider label="Features" />
@@ -38,28 +38,28 @@ function HomeView() {
   );
   elementLabels.push('Quick Search');
 
-  if (homepageNewsSectionText !== '') {
-    if (homepageNewsSectionText !== 'disabled') {
-      elements.push(
-        <Content>
-          <SectionDivider label="Latest News" />
-          <FreeText
-            text={homepageNewsSectionText}
-            style={{ textAlign: 'left' }}
-          />
-        </Content>,
-      );
-      elementLabels.push('Latest News');
-    }
-  } else {
-    elements.push(
-      <Content>
-        <SectionDivider label="Latest News" />
-        <News />
-      </Content>,
-    );
-    elementLabels.push('Latest News');
-  }
+  // if (homepageNewsSectionText !== '') {
+  //   if (homepageNewsSectionText !== 'disabled') {
+  //     elements.push(
+  //       <Content>
+  //         <SectionDivider label="Latest News" />
+  //         <FreeText
+  //           text={homepageNewsSectionText}
+  //           style={{ textAlign: 'left' }}
+  //         />
+  //       </Content>,
+  //     );
+  //     elementLabels.push('Latest News');
+  //   }
+  // } else {
+  //   elements.push(
+  //     <Content>
+  //       <SectionDivider label="Latest News" />
+  //       <News />
+  //     </Content>,
+  //   );
+  //   elementLabels.push('Latest News');
+  // }
 
   if (homepageFundingSectionText !== '') {
     if (homepageFundingSectionText !== 'disabled') {

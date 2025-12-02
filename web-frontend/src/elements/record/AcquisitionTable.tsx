@@ -46,6 +46,7 @@ function AcquisitionTable({ acquisition, width, height }: InputProps) {
           mode="copy"
           title={'Copy instrument to clipboard'}
           component={acquisition.instrument}
+          
           onClick={() =>
             copyTextToClipboard('Instrument', acquisition.instrument)
           }
@@ -60,6 +61,7 @@ function AcquisitionTable({ acquisition, width, height }: InputProps) {
           mode="copy"
           title={'Copy instrument type to clipboard'}
           component={acquisition.instrument_type}
+         
           onClick={() =>
             copyTextToClipboard('Instrument Type', acquisition.instrument_type)
           }

@@ -3,7 +3,7 @@ import AboutView from '../elements/routes/pages/about/AboutView';
 import AccessionView from '../elements/routes/pages/accession/AccessionView';
 import ContentView from '../elements/routes/pages/content/ContentView';
 import HomeView from '../elements/routes/pages/home/HomeView';
-import NewsView from '../elements/routes/pages/news/NewsView';
+// import NewsView from '../elements/routes/pages/news/NewsView';
 import NotFoundView from '../elements/routes/pages/notfound/NotFoundView';
 import SearchView from '../elements/routes/pages/search/SearchView';
 import Documentation from '../elements/routes/pages/documentation/Documentation';
@@ -52,12 +52,12 @@ const routes = {
     id: 'accessionPrevious',
     path: 'RecordDisplay',
   } as RouteType,
-  news: {
-    component: NewsView,
-    label: 'News',
-    id: 'news',
-    path: 'news',
-  } as RouteType,
+  // news: {
+  //   component: NewsView,
+  //   label: 'News',
+  //   id: 'news',
+  //   path: 'news',
+  // } as RouteType,
   about: {
     component: AboutView,
     label: 'About',

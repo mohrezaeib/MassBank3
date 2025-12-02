@@ -6,7 +6,7 @@ import AnnotationTable from './AnnotationTable';
 import RecordViewHeader from './RecordViewHeader';
 import AcquisitionTable from './AcquisitionTable';
 import LinksTable from './LinksTable';
-import CommentsTable from './CommentsTable';
+// import CommentsTable from './CommentsTable';
 import SpeciesTable from './SpeciesTable';
 import InformationTable from './InformationTable';
 import SectionDivider from '../basic/SectionDivider';
@@ -41,7 +41,8 @@ function RecordView({ record, width, height }: inputProps) {
 
     const hasLinks = record.compound.link && record.compound.link.length > 0;
     const hasSpecies = record.species && Object.keys(record.species).length > 0;
-    const hasComments = record.comments && record.comments.length > 0;
+    // const hasComments = record.comments && record.comments.length > 0;
+    console.log('RecordView record.comments:', record.comments);
 
     const elements: JSX.Element[] = [];
     const elementLabels: string[] = [];
@@ -73,11 +74,15 @@ function RecordView({ record, width, height }: inputProps) {
     elements.push(spectrum);
     elementLabels.push('Spectrum');
 
+    
+
     const massSpectrometry = (
       <Content>
         {buildDivider('Mass Spectrometry')}
         <MassSpectrometryTable
           massSpectrometry={record.mass_spectrometry}
+          comments={record.comments}
+          
           width="100%"
           height="auto"
         />
@@ -138,20 +143,20 @@ function RecordView({ record, width, height }: inputProps) {
       elementLabels.push('Species');
     }
 
-    if (hasComments) {
-      const comments = (
-        <Content>
-          {buildDivider('Comments')}
-          <CommentsTable
-            comments={record.comments}
-            width="100%"
-            height="auto"
-          />
-        </Content>
-      );
-      elements.push(comments);
-      elementLabels.push('Comments');
-    }
+    // if (hasComments) {
+    //   const comments = (
+    //     <Content>
+    //       {buildDivider('Comments')}
+    //       <CommentsTable
+    //         comments={record.comments}
+    //         width="100%"
+    //         height="auto"
+    //       />
+    //     </Content>
+    //   );
+    //   elements.push(comments);
+    //   elementLabels.push('Comments');
+    // }
 
     const furtherInformation = (
       <Content>

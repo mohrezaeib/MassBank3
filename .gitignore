@@ -23,5 +23,4 @@
 # misc
 .DS_Store/
 .vscode/
-/compose/.env
-
+data

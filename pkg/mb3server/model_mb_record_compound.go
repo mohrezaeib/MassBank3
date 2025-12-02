@@ -45,8 +45,8 @@ func AssertMbRecordCompoundRequired(obj MbRecordCompound) error {
 		"classes": obj.Classes,
 		"formula": obj.Formula,
 		"mass": obj.Mass,
-		// "smiles": obj.Smiles,
-		// "inchi": obj.Inchi,
+		"smiles": obj.Smiles,
+		"inchi": obj.Inchi,
 	}
 	for name, el := range elements {
 		if isZero := IsZeroValue(el); isZero {

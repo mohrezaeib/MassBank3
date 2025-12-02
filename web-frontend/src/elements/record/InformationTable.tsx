@@ -68,21 +68,21 @@ function InformationTable({ record, width, height }: InputProps) {
         />
       ),
     });
-    dataSource.push({
-      key: 'record-view-general-table-publication',
-      label: 'Publication',
-      value:
-        record.publication && record.publication !== '' ? (
-          <ExportableContent
-            component={<LabelWrapper value={record.publication} />}
-            mode="copy"
-            onClick={() => handleOnCopy('Publication', record.publication)}
-            title="Copy publication to clipboard"
-          />
-        ) : (
-          <NotAvailableLabel />
-        ),
-    });
+    // dataSource.push({
+    //   key: 'record-view-general-table-publication',
+    //   label: 'Publication',
+    //   value:
+    //     record.publication && record.publication !== '' ? (
+    //       <ExportableContent
+    //         component={<LabelWrapper value={record.publication} />}
+    //         mode="copy"
+    //         onClick={() => handleOnCopy('Publication', record.publication)}
+    //         title="Copy publication to clipboard"
+    //       />
+    //     ) : (
+    //       <NotAvailableLabel />
+    //     ),
+    // });
     dataSource.push({
       key: 'record-view-general-table-license',
       label: 'License',
@@ -163,7 +163,7 @@ function InformationTable({ record, width, height }: InputProps) {
     record.copyright,
     record.date,
     record.license,
-    record.publication,
+    // record.publication,
     width,
   ]);
 }

@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react';
 import { Content } from 'antd/es/layout/layout';
-import massbankLogo from '../../../../assets/logo.png';
+import massbankLogo from '../../../../assets/logo.svg';
 import { usePropertiesContext } from '../../../../context/properties/properties';
 import FreeText from '../../../basic/FreeText';
 
@@ -23,17 +23,17 @@ function MassBankInfo() {
         <img
           src={massbankLogo}
           style={{
-            height: 70,
-            marginTop: 10,
-            marginBottom: 40,
+            height: 170,
+            marginTop: 40 ,
+            marginBottom: 20,
           }}
-          key="massbank-logo-overview"
-          alt="MassBank logo"
+          key="MycoMSBase-logo-overview"
+          alt="MycoMSBase logo "
         />
         {<FreeText text={homepageIntroText} />}
       </Content>
     ),
-    [homepageIntroText],
+    [homepageIntroText],  
   );
 }
 

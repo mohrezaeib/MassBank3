@@ -149,18 +149,18 @@ function RecordViewHeader({ record, width, height, imageWidth }: InputProps) {
       ),
     });
 
-    // Add ChemOnt classes
-    const chemontClasses: string[] = [];
+    // Add CHEMONT classes
+    const CHEMONTClasses: string[] = [];
     const treeNodes: JSX.Element[] = [];
     record.compound.link
-      .filter((l) => l.database === 'ChemOnt')
+      .filter((l) => l.database === 'CHEMONT')
       .forEach((l) => {
         l.identifier.split(';').forEach((cc: string, i: number) => {
           const className = cc.trim();
-          chemontClasses.push(className);
+          CHEMONTClasses.push(className);
           treeNodes.push(
             <ExportableContent
-              key={'class-label-' + className + '-chemont' + i}
+              key={'class-label-' + className + '-CHEMONT' + i}
               component={<LabelWrapper value={className} />}
               mode="copy"
               onClick={() =>
@@ -181,35 +181,35 @@ function RecordViewHeader({ record, width, height, imageWidth }: InputProps) {
       });
 
     const treeData: TreeDataNode[] =
-      chemontClasses.length >= 3
+      CHEMONTClasses.length >= 3
         ? [
             {
               title: treeNodes[1],
-              key: chemontClasses[1],
+              key: CHEMONTClasses[1],
               isLeaf: true,
               children: [
                 {
                   title: treeNodes[2],
-                  key: chemontClasses[2],
+                  key: CHEMONTClasses[2],
                   isLeaf: true,
                   children:
-                    chemontClasses.length > 3
+                    CHEMONTClasses.length > 3
                       ? [
                           {
                             title: treeNodes[3],
-                            key: chemontClasses[3],
+                            key: CHEMONTClasses[3],
                             isLeaf: true,
                             children:
-                              chemontClasses.length > 4
+                              CHEMONTClasses.length > 4
                                 ? [
                                     {
                                       title: treeNodes[4],
-                                      key: chemontClasses[4],
+                                      key: CHEMONTClasses[4],
                                       isLeaf: true,
                                       children: [
                                         {
                                           title: treeNodes[0],
-                                          key: chemontClasses[0],
+                                          key: CHEMONTClasses[0],
                                           isLeaf: true,
                                         },
                                       ],
@@ -218,7 +218,7 @@ function RecordViewHeader({ record, width, height, imageWidth }: InputProps) {
                                 : [
                                     {
                                       title: treeNodes[0],
-                                      key: chemontClasses[0],
+                                      key: CHEMONTClasses[0],
                                       isLeaf: true,
                                     },
                                   ],
@@ -227,7 +227,7 @@ function RecordViewHeader({ record, width, height, imageWidth }: InputProps) {
                       : [
                           {
                             title: treeNodes[0],
-                            key: chemontClasses[0],
+                            key: CHEMONTClasses[0],
                             isLeaf: true,
                           },
                         ],
@@ -238,8 +238,8 @@ function RecordViewHeader({ record, width, height, imageWidth }: InputProps) {
         : [];
 
     dataSource.push({
-      key: 'record-view-header-table-classes-chemont',
-      label: 'Classification (ChemOnt)',
+      key: 'record-view-header-table-classes-CHEMONT',
+      label: 'Classification (CHEMONT)',
       value: (
         <Content
           style={{

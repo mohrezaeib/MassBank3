@@ -60,7 +60,7 @@ function Footer({
           backgroundColor,
           padding: 0,
         }}
-      >
+      >`
         <Row
           style={{
             width: '100%',
@@ -72,11 +72,11 @@ function Footer({
             backgroundColor,
           }}
         >
-          <Col span={colSpan}>&copy; 2025 MassBank Team</Col>
+          <Col span={colSpan}>&copy; 2025 MycoMSBase Team</Col>
           <Col span={colSpan}>Version: {version}</Col>
           <Col span={colSpan}>
             <a
-              href="https://github.com/MassBank/MassBank3"
+              href=""
               target="_blank"
               title="Find us on GitHub"
             >

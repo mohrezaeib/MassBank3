@@ -15,7 +15,7 @@ function FeaturesOverview() {
       'Compound Search',
       'Spectral Search',
       'Structure Search',
-      'MassBank API',
+      'MycoMSBase API',
     ];
     return (
       <Content
@@ -43,7 +43,7 @@ function FeaturesOverview() {
             }}
           >
             <Text>
-              The MassBank system provides a variety of functionalities to
+              The MycoMSBase system provides a variety of functionalities to
               access, filter and search for data within its knowledge base. The
               following key features are available.
             </Text>
@@ -95,8 +95,8 @@ function FeaturesOverview() {
             alignItems: 'center',
           }}
         >
-          <Text>
-            Visit the MassBank{' '}
+          {/* <Text>
+            Visit the MycoMSBase{' '}
             <a
               href={backendUrl}
               target="_blank"
@@ -105,7 +105,7 @@ function FeaturesOverview() {
               API documentation
             </a>{' '}
             to learn more about available endpoints and how to use them.
-          </Text>
+          </Text> */}
         </Content>
       </Content>
     );

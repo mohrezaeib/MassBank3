@@ -10,9 +10,6 @@
 
 package mb3server
 
-
-
-
 type MbRecord struct {
 
 	// Record identifier
@@ -31,7 +28,7 @@ type MbRecord struct {
 	License string `json:"license"`
 
 	// Copyright
-	Copyright string `json:"copyright,omitempty"`
+	Copyright string `json:"copyright"`
 
 	// Bibliographic information of reference
 	Publication string `json:"publication,omitempty"`
@@ -57,10 +54,10 @@ type MbRecord struct {
 func AssertMbRecordRequired(obj MbRecord) error {
 	elements := map[string]interface{}{
 		"accession": obj.Accession,
-		"title": obj.Title,
-		"date": obj.Date,
-		"authors": obj.Authors,
-		"license": obj.License,
+		"title":     obj.Title,
+		"date":      obj.Date,
+		"authors":   obj.Authors,
+		"license":   obj.License,
 	}
 	for name, el := range elements {
 		if isZero := IsZeroValue(el); isZero {
@@ -68,72 +65,72 @@ func AssertMbRecordRequired(obj MbRecord) error {
 		}
 	}
 
-	// if err := AssertMbRecordDeprecatedRequired(obj.Deprecated); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordDateRequired(obj.Date); err != nil {
-	// 	return err
-	// }
-	// for _, el := range obj.Authors {
-	// 	if err := AssertAuthorsInnerRequired(el); err != nil {
-	// 		return err
-	// 	}
-	// }
-	// for _, el := range obj.Comments {
-	// 	if err := AssertMbRecordCommentsInnerRequired(el); err != nil {
-	// 		return err
-	// 	}
-	// }
-	// if err := AssertMbRecordCompoundRequired(obj.Compound); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordSpeciesRequired(obj.Species); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordAcquisitionRequired(obj.Acquisition); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordMassSpectrometryRequired(obj.MassSpectrometry); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordPeakRequired(obj.Peak); err != nil {
-	// 	return err
-	// }
+	if err := AssertMbRecordDeprecatedRequired(obj.Deprecated); err != nil {
+		return err
+	}
+	if err := AssertMbRecordDateRequired(obj.Date); err != nil {
+		return err
+	}
+	for _, el := range obj.Authors {
+		if err := AssertAuthorsInnerRequired(el); err != nil {
+			return err
+		}
+	}
+	for _, el := range obj.Comments {
+		if err := AssertMbRecordCommentsInnerRequired(el); err != nil {
+			return err
+		}
+	}
+	if err := AssertMbRecordCompoundRequired(obj.Compound); err != nil {
+		return err
+	}
+	if err := AssertMbRecordSpeciesRequired(obj.Species); err != nil {
+		return err
+	}
+	if err := AssertMbRecordAcquisitionRequired(obj.Acquisition); err != nil {
+		return err
+	}
+	if err := AssertMbRecordMassSpectrometryRequired(obj.MassSpectrometry); err != nil {
+		return err
+	}
+	if err := AssertMbRecordPeakRequired(obj.Peak); err != nil {
+		return err
+	}
 	return nil
 }
 
 // AssertMbRecordConstraints checks if the values respects the defined constraints
 func AssertMbRecordConstraints(obj MbRecord) error {
-	// if err := AssertMbRecordDeprecatedConstraints(obj.Deprecated); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordDateConstraints(obj.Date); err != nil {
-	// 	return err
-	// }
-	// for _, el := range obj.Authors {
-	// 	if err := AssertAuthorsInnerConstraints(el); err != nil {
-	// 		return err
-	// 	}
-	// }
-	// for _, el := range obj.Comments {
-	// 	if err := AssertMbRecordCommentsInnerConstraints(el); err != nil {
-	// 		return err
-	// 	}
-	// }
-	// if err := AssertMbRecordCompoundConstraints(obj.Compound); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordSpeciesConstraints(obj.Species); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordAcquisitionConstraints(obj.Acquisition); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordMassSpectrometryConstraints(obj.MassSpectrometry); err != nil {
-	// 	return err
-	// }
-	// if err := AssertMbRecordPeakConstraints(obj.Peak); err != nil {
-	// 	return err
-	// }
+	if err := AssertMbRecordDeprecatedConstraints(obj.Deprecated); err != nil {
+		return err
+	}
+	if err := AssertMbRecordDateConstraints(obj.Date); err != nil {
+		return err
+	}
+	for _, el := range obj.Authors {
+		if err := AssertAuthorsInnerConstraints(el); err != nil {
+			return err
+		}
+	}
+	for _, el := range obj.Comments {
+		if err := AssertMbRecordCommentsInnerConstraints(el); err != nil {
+			return err
+		}
+	}
+	if err := AssertMbRecordCompoundConstraints(obj.Compound); err != nil {
+		return err
+	}
+	if err := AssertMbRecordSpeciesConstraints(obj.Species); err != nil {
+		return err
+	}
+	if err := AssertMbRecordAcquisitionConstraints(obj.Acquisition); err != nil {
+		return err
+	}
+	if err := AssertMbRecordMassSpectrometryConstraints(obj.MassSpectrometry); err != nil {
+		return err
+	}
+	if err := AssertMbRecordPeakConstraints(obj.Peak); err != nil {
+		return err
+	}
 	return nil
 }

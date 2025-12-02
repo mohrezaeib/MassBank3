@@ -91,7 +91,7 @@ function ServiceStatusView() {
             }}
           >
             <Result
-              title="MassBank API"
+              title="MycoMSBase API"
               subTitle={
                 <p style={{ color: 'black' }}>
                   {errorApi && errorApi.length > 0

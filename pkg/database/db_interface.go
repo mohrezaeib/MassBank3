@@ -6,7 +6,7 @@ import (
 
 	"github.com/Code-Hex/dd"
 
-	"github.com/mohrezaeib/MassBank3/pkg/massbank"
+	"github.com/MassBank/MassBank3/pkg/massbank"
 )
 
 // Filters is the abstract description of filters used to find MassBank records

@@ -143,9 +143,9 @@ function MetadataPanel({ metadata, width = '100%', height }: InputProps) {
       label: 'Compound classes (free text)',
       value: (
         <ExportableContent
-          component={
-            <LabelWrapper value={String(metadata.compound_class.length)} />
-          }
+component={
+  <LabelWrapper value={String(metadata.compound_class?.length || 0)} />
+}
           mode="copy"
           onClick={() =>
             copyTextToClipboard(

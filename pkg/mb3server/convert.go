@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/mohrezaeib/MassBank3/pkg/massbank"
+	"github.com/MassBank/MassBank3/pkg/massbank"
 )
 
 func ConvertMb3RecordToJsonString(record *MbRecord) (string, error) {
@@ -47,7 +47,7 @@ func ConvertMb2RecordToMb3Record(record *massbank.MassBank2) (*MbRecord, error) 
 		Copyright:   "",
 		Publication: "",
 		Project:     "",
-		Comments:    nil,
+
 		Compound: MbRecordCompound{
 			Names:   *record.Compound.Names,
 			Classes: nil, // *record.Compound.Classes
@@ -123,6 +123,7 @@ func ConvertMb2RecordToMb3Record(record *massbank.MassBank2) (*MbRecord, error) 
 	var mzs = record.Peak.Peak.Mz
 	var ints = record.Peak.Peak.Intensity
 	var rels = record.Peak.Peak.Rel
+
 	if ids != nil && len(ids) > 0 {
 		for i := range mzs {
 			result.Peak.Peak.Values = append(result.Peak.Peak.Values, MbRecordPeakPeakValuesInner{
@@ -257,13 +258,18 @@ func ConvertMb2RecordToMb3Record(record *massbank.MassBank2) (*MbRecord, error) 
 		result.Acquisition.MassSpectrometry = spectrometry
 	}
 
-	// insert comments data
+	// Comments
 	if record.Comments != nil {
-		comments := []massbank.SubtagProperty{}
-		for _, comment := range *record.Comments {
-			comments = append(comments, massbank.SubtagProperty(comment))
+		result.Comments = make([]MbRecordCommentsInner, 0, len(*record.Comments))
+		for _, c := range *record.Comments {
+			result.Comments = append(result.Comments, MbRecordCommentsInner{
+				Subtag: c.Subtag,
+				Value:  c.Value,
+			})
 		}
-		*record.Comments = comments
+	} else {
+		// Optional: if you want "comments": [] instead of omitting the field
+		// result.Comments = []MbRecordCommentsInner{}
 	}
 
 	// insert mass spectrometry data

@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mohrezaeib/MassBank3/pkg/massbank"
+	"github.com/MassBank/MassBank3/pkg/massbank"
 	"github.com/lib/pq"
 )
 
@@ -399,6 +399,11 @@ func (p *PostgresSQLDB) GetRecord(s *string) (*massbank.MassBank2, error) {
 	stmt.Close()
 	if err != nil {
 		return nil, err
+	}
+	// copy COPYRIGHT from DB into MassBank2 struct
+	if copyright.Valid {
+		c := copyright.String
+		result.Copyright = &c
 	}
 
 	result.RecordTitle = &title

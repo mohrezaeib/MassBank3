@@ -17,26 +17,26 @@ function CommentsTable({ comments, width, height }: InputProps) {
     }
 
     const columns = [
-      {
-        title: 'Comment',
-        dataIndex: 'Comment',
-        key: 'comment',
-        align: 'center' as const,
-      },
-      {
-        title: 'Text',
-        dataIndex: 'Text',
-        key: 'text',
-        align: 'center' as const,
-      },
+      // {
+      //   title: 'Comment',
+      //   dataIndex: 'Comment',
+      //   key: 'comment',
+      //   align: 'center' as const,
+      // },
+      // {
+      //   title: 'Text',
+      //   dataIndex: 'Text',
+      //   key: 'text',
+      //   align: 'center' as const,
+      // },
     ];
 
     const dataSource: { [key: string]: string }[] = [];
     comments.forEach((comment, i) =>
       dataSource.push({
         key: `comments-key-${i}`,
-        Comment: comment.subtag,
-        Text: comment.value,
+        // Comment: comment.subtag,
+        // Text: comment.value,
       }),
     );
 

@@ -6,7 +6,7 @@ import { Header as HeaderAntD } from 'antd/es/layout/layout';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { usePropertiesContext } from '../../context/properties/properties';
 import { CSSProperties, useMemo } from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.svg';
 import AccessionSearchInputField from '../common/AccessionSearchInputField';
 
 const backgroundColor: CSSProperties['backgroundColor'] = 'rgb(223, 223, 223)';
@@ -44,13 +44,10 @@ function Header({ height }: InputProps) {
           <a href={baseUrl + '/'} target="_self">
             <img
               src={logo}
-              alt="MassBank Europe"
+              alt="MycoMSBase"
               style={{
-                height:
-                  typeof height === 'number'
-                    ? height - 5
-                    : `calc(${height} - 5px)`,
-                padding: 5,
+                height:90,
+                padding: "8px 12px",
               }}
             />
           </a>

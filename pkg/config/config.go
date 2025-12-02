@@ -7,7 +7,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/mohrezaeib/MassBank3/pkg/database"
+	"github.com/MassBank/MassBank3/pkg/database"
 )
 
 type ToolConfig struct {
@@ -33,7 +33,7 @@ const (
 	dbPortDefault          = "0"
 	dbNameDefault          = "massbank3"
 	dbConnStringDefault    = ""
-	mbGitRepoDefault       = "https://github.com/mohrezaeib/sample_hzi_massbank_data"
+	mbGitRepoDefault       = "https://github.com/mohrezaeib/mohrezaeib/sample_hzi_massbank_data-2"
 	mbGitBranchDefault     = "main"
 	mbDataDirectoryDefault = ""
 	mbDbInitDefault        = "true"

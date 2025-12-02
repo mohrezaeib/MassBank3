@@ -16,21 +16,21 @@ const markDownUrls: LabelValueType[] = [
   {
     label: 'User',
     value:
-      'https://massbank.github.io/MassBank-documentation/user_documentation.md',
+      '',
   },
   {
     label: 'Contributor',
     value:
-      'https://massbank.github.io/MassBank-documentation/contributor_documentation.md',
+      '',
   },
   {
     label: 'Developer',
     value:
-      'https://massbank.github.io/MassBank-documentation/developer_documentation.md',
+      '',
   },
   {
     label: 'Command Line Tools',
-    value: 'https://massbank.github.io/MassBank-documentation/cli_reference.md',
+    value: '',
   },
 ];
 
@@ -38,24 +38,11 @@ function Documentation() {
   const [isFetching, setIsFetching] = useState<boolean>(true);
   const [markDowns, setMarkDowns] = useState<LabelValueType[]>([]);
 
-  const fetchMarkDowns = useCallback(async () => {
-    setIsFetching(true);
+const fetchMarkDowns = useCallback(async () => {
+  setIsFetching(false);
+  setMarkDowns(markDownUrls);  
+}, []);
 
-    try {
-      const _markDowns: LabelValueType[] = [];
-      for (const entry of markDownUrls) {
-        const response = await fetch(entry.value);
-        const md = await response.text();
-
-        _markDowns.push({ label: entry.label, value: md });
-      }
-      setMarkDowns(_markDowns);
-    } catch (e) {
-      console.error(e);
-    }
-
-    setIsFetching(false);
-  }, []);
 
   useEffect(() => {
     fetchMarkDowns();

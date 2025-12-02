@@ -9,9 +9,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/mohrezaeib/MassBank3/pkg/config"
-	"github.com/mohrezaeib/MassBank3/pkg/database"
-	"github.com/mohrezaeib/MassBank3/pkg/massbank"
+	"github.com/MassBank/MassBank3/pkg/config"
+	"github.com/MassBank/MassBank3/pkg/database"
+	"github.com/MassBank/MassBank3/pkg/massbank"
 
 	mapset "github.com/deckarep/golang-set/v2"
 )
@@ -548,7 +548,7 @@ func GetRecords(contributor []string, instrumentType []string, msType []string, 
 
 func GetVersion() (string, error) {
 
-	content, err := os.ReadFile("version.txt")
+	content, err := os.ReadFile("mb_version.txt")
 	if err != nil {
 		return "v1.0.0 (default)", nil
 	}
